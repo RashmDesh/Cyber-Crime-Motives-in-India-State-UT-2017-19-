@@ -11,7 +11,7 @@ html_temp=""" <div style="background-color:tomato;padding:10px"> """
 st.markdown(html_temp,unsafe_allow_html=True)
 st.title("Cyber Crime Motives in India(State/UT)")
 
-Motives_data= pd.read_csv('C:/Users/lenovo/Desktop/cyber_crime_2017-2019/Motives.csv')
+Motives_data= pd.read_csv("Motives.csv")
 
 st.markdown(html_temp,unsafe_allow_html=True)
 
