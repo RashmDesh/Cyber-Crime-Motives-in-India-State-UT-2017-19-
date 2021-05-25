@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
 #%matplotlib inline
 html_temp=""" <div style="background-color:tomato;padding:10px"> """
 st.markdown(html_temp,unsafe_allow_html=True)
