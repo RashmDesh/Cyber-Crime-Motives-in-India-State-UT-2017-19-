@@ -3,12 +3,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-#%matplotlib inline
+
 html_temp=""" <div style="background-color:tomato;padding:10px"> """
 st.markdown(html_temp,unsafe_allow_html=True)
-st.title("Cyber Crime Motives in India(State/UT)")
+st.title("Cyber Crime Motives In India(State/UT)")
 
-Motives_data= pd.read_csv("Motives.csv")
+Motives_data= pd.read_csv('C:/Users/lenovo/Desktop/cyber_crime_2017-2019/Motives.csv')
 
 st.markdown(html_temp,unsafe_allow_html=True)
 
@@ -40,5 +40,29 @@ st.write('State/UT wise graph for your selected Motives : :', option)
 #from 2017-2019 Fraud Motives satae/UT wise
 motives_value=Motives_data.groupby(['State/UT'])[option].sum().to_frame(name="Total")
 st.bar_chart(motives_value,use_container_width=True)
+
+st.markdown(html_temp,unsafe_allow_html=True)
+
+st.title("Cyber Crime Motives In India For Your Selected State/UT and year:")
+
+State_option=st.selectbox("Select State/UT?",("Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh",
+"Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand",
+"Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya",
+ "Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu",
+ "Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal","A&N Islands",
+ "Chandigarh","D&N Haveli","Daman & Diu","Delhi","Lakshadweep","Puducherry"))
+
+Year_option=st.selectbox("Select Year?",(2017,2018,2019))
+#cyber crime motives details for specified State/UT and year
+state_year=Motives_data[(Motives_data["State/UT"]==State_option) & (Motives_data["Year"]==Year_option)]
+state_year=state_year.drop(['Unnamed: 0','S. No'], axis=1)
+st.write('Your Selected State/UT:', State_option)
+st.write('Your Selected Year:', Year_option)
+st.write('Cyber Crime Motives Details:-')
+state_year
+state_year=state_year.drop(['Total','Year','Category','State/UT'], axis=1)
+state_year=state_year.T
+st.bar_chart(state_year)
 st.markdown("***")
+
 st.subheader("Thank You!")
