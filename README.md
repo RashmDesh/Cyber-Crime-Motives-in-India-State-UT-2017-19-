@@ -13,7 +13,7 @@ link:- https://share.streamlit.io/rashmdesh/cyber-crime-motives-in-india-state-u
 * Finally we get apropriate combine cyber crime motives data of the year 2017 to 2019.
 * In Motives.csv 108 number of rows and 26 number of columns.Also Motives.csv doesn't exits any null values.
 
-### State/UT and Motives (Max/min) details
+### State/UT and Motives (Max/min) details (Graphical Representation)
 * Uttar Pradesh is state/UT having maximum cyber crime rates accoring to motives i.e 22667.
 * D&N Havel is state/UT having minimum cyber crime rates accoring to motives i.e 1.
 * Fraud which having maximum crime motives in year 2017 to 2019.
