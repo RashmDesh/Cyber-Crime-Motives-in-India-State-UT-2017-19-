@@ -1,6 +1,4 @@
 '''@Author : Rashmi Deshmukh'''
-from tkinter import font
-
 import streamlit as st
 import pandas as pd
 import numpy as np
