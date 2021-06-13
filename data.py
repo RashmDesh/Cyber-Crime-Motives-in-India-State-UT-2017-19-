@@ -4,14 +4,15 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 html_temp=""" <div style="background-color:tomato;padding:10px"> """
 st.markdown(html_temp,unsafe_allow_html=True)
-st.title("Cyber Crime Motives In India(State/UT)")
-
-Motives_data= pd.read_csv('Motives.csv')
-
+#st.title("Cyber Crime Motives In India(State/UT)")
+new_title = '<p style="font-family:sans-serif; color:Green; font-size: 42px;">Cyber Crime Motives In India(State/UT)</p>'
+st.markdown(new_title, unsafe_allow_html=True)
 st.markdown(html_temp,unsafe_allow_html=True)
 
+Motives_data= pd.read_csv('Motives.csv')
 st.title("From 2017-2019 State/UT wise Cyber Crime Motives Count Rate :")
 three_year_total=Motives_data.groupby(['State/UT'])['Total'].sum()
 st.bar_chart(three_year_total,use_container_width=True)
